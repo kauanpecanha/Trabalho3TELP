@@ -1,0 +1,97 @@
+A Programação é dividida, primordialmente, em dois paradigmas: a programação estruturada, e a programação orientada a objetos.
+
+Até aqui, foi visto o que é o Python, utilizado a nível de programação estruturada. Agora, veremos como ele pode ser utilizado para a orientação a objetos. Na verdade, Python em si é uma linguagem orientada a objetos, até quando não se está programando neste paradigma. Mas veremos isso posteriormente.
+
+A POO tem o intuito de aproximar a programação a objetos, sejam eles reais ou virtuais. Daí surge a possibilidade de programar dinâmicas em jogos digitais.
+
+Há, primordialmente, alguns conceitos importantes nesta área, como herança, polimorfismo, entre outros. Entretanto, nos restringiremos a somente dois, uma vez que o foco desta aula é em Python e seus usos. São eles classes e objetos.
+
+Para se entender do que estamos falando, primeiro, entre com o seguinte comando em seu editor de código: print(type("hello")). No output, será impresso <class 'str'>. Este foi um passo importante na compreensão da ideia anteriormente mencionada de que tudo em Python é orientação a objetos. "Hello" é, de fato, uma string, simbolizada pelas letras str exibidas. Quando se digita "Hello", está se criando um "objeto" de tipo string. Ou melhor, da classe "string". Esta classe abrange todas as coisas que são compostas por uma cadeia de caracteres. Afinal, se for executado os seguintes comandos:
+
+print(type("Kauan"))
+
+print(type("Gustavo"))
+
+print(type("Letícia"))
+
+print(type("Nathan"))
+
+print(type("Pedro"))
+
+Em seu output, será exibido:
+
+<class 'str'>
+<class 'str'>
+<class 'str'>
+<class 'str'>
+<class 'str'>
+
+Afinal, todos eles são objetos da mesma classe.
+
+Formalmente, pode-se definir a classe como um conjunto de características e métodos comuns a todos os seus objetos, e estes, são determinados como instâncias daquela.
+
+Este é o conceito de classe e objeto.
+
+Agora, veremos como estes conceitos se aplicam de forma funcional em Python.
+
+Vamos tomar, como exemplo, este seguinte programa:
+
+
+class pessoa:
+
+    def __init__(self, nome, idade): # construtor
+        self.nome = nome
+        self.idade = idade
+    
+    def falar(self, frase): # método que permite o pessoa falar uma frase
+        print("\n")
+        print(str(self.nome) + " está dizendo: " + frase)
+    
+    def __str__(self): # método que permite transformar as informações sobre o objeto, em string
+        print("Me chamo " + str(self.nome) + ", e tenho " + str(self.idade) + " anos!")
+        print("\n")
+
+p1 = pessoa("João", 18) #o objeto p1 é do tipo pessoa, e assume os atributos nome como João, e idade, como 18
+p2 = pessoa("Maria", 19) #o objeto p2 é do tipo pessoa, e assume os atributos nome como Maria, e idade, como 19
+
+p1.falar("Olá, Maria!") #chamada da função de fala, referente ao João, dizendo Olá para Maria
+p1.__str__() #chamada da função para imprimir as informações acerca de João
+
+p2.falar("Olá, João!") #chamada da função de fala, referente à Maria, dizendo Olá de volta, para joão
+p2.__str__() #chamada da função para imprimir as informações acerca de Maria
+
+
+Aqui, podemos ver como a orientação a objetos se dá através de um código funcional.
+
+Primeiramente, deve-se salientar para não se assustar com este código. Ele será devidamente explicado a seguir!
+
+A classe pessoa é criada, tendo 3 métodos, sendo eles __init__ , falar, e __str__ . Vamos por partes.
+
+O método __init__ se trata de uma função especial, que é chamada construtor. Ele é responsável por predefinir quais informações serão criadas logo quando houver a criação de um objeto. É através dele que ao se digitar p1 = pessoa("João", 18), p1 rapidamente assume as informações de que seu nome é João, e sua idade, 18. 
+
+__init__ recebe, ao todo, três parâmetros, sendo eles self, nome, e idade. Os dois últimos não tem nada de especial, diferentemente de self, que em suma diz à função que o objeto em questão se trata do mesmo que chama esta função. Na ausência deste parâmetro em qualquer uma das funções criadas na classe, ocorre mal funcionamento.
+
+Só então, o objeto recebe o nome passado como segundo parâmetro, e a idade, como o terceiro. Desta forma, o construtor cumpre sua função de inicializar as informações para um objeto.
+
+
+O segundo método em questão, falar, recebe dois parâmetros: o essencial self, e a frase que se quer que seja dita.
+
+Logo em seguida, há a instrução, que consiste em um print(). Dentro dele, há a única forma de se imprimir um atributo de um objeto: utilizando o conversor str, e passando como parâmetro o atributo que se quer transformar em string(exemplo: self.nome). 
+
+Deve-se lembrar que estes atributos, mesmo que sejam uma cadeia de caracteres, não são do mesmo tipo que as strings, mas sim, do tipo pessoa, justamente por serem componentes da classe pessoa.
+
+Ao se fazer suas conversões para strings, ocorre então a concatenação de strings, fundindo seus conteúdos. Um exemplo de resultado desta função pode ser observado no output João<nome do objeto p1> está dizendo Olá, Maria!<frase passada como parâmetro>.
+
+Desta forma, a função falar cumpriu sua função de imprimir na tela do usuário o que a pessoa em questão supostamente disse. Nota-se como este método pode facilmente simular diálogos inteiros entre supostos personagens, que na verdade são objetos, e frases, que são strings pré-definidas.
+
+Por fim, há __str__, função essa que recebe somente o parâmetro self, tendo como principal intuito imprimir as informações referentes ao objeto que a chamar.
+
+Seu único comando é um print(), que faz as mesmas conversões de string anteriormente mencionadas, de forma a torná-las apresentáveis, como em um diálogo comum.
+
+Após a definição de todos estes métodos, pode-se vê-los funcionando, quais informações são passadas como parâmetros, entre outros.
+
+As duas primeiras linhas consistem na criação dos objetos p1 e p2, e nas inforamções que serão direcionadas para o construtor.
+
+As outras duas linhas de código são referentes a simular a parte inicial do diálogo, começado por João, e só então, referente à Maria.
+
+Como já mencionado, é desta forma que se pode simular diálogos inteiros, podendo criar funções para imprimir informações específicas, e assim, construir histórias. Esta é somente uma das oportunidades que podem ser exploradas com a orientação a objetos. 
