@@ -1,5 +1,3 @@
-# início do código
-
 alunos = []
 notas = []
 

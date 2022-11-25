@@ -1,6 +1,8 @@
 alunos = []
 notas = []
 
+#teste
+
 codigo = 1
 
 while(codigo != 0):
