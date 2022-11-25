@@ -1,4 +1,4 @@
-#funções
+#funções - Kauan
 
 def funcao_sem_parametros(): # função sem parâmetros
     print("Hello, word")
