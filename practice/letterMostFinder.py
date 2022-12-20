@@ -1,4 +1,4 @@
-import unidecode
+import unidecode #installed via pip install unidecode - responsible for substitute special caracters(ex.: á, ô, etc) for thenselves in normal version, in order to do the verification the right way ('cause á != a)
 
 frase = str(input("Entre com uma frase: "))
 
