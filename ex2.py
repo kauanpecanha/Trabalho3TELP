@@ -207,3 +207,5 @@ storage[runner6] = tempo6
 print(f"\n\n O melhor corredor foi {melhorCorredor} e seu melhor tempo foi {melhorTempo}s na volta {melhorVolta}")
 print(f"\n\n\n CAMPEÃO: {melhorCorredor}")
 print(f"\n TEMPOS: {storage[melhorCorredor]}")
+
+# exercício 3 finalizado com sucesso

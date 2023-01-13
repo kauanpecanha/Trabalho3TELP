@@ -87,3 +87,5 @@ while(True):
             print("\n Você ainda não atingiu a idade mínima de 65 anos para se aposentar!")
         
     break
+
+# exercício 4 finalizado com sucesso
